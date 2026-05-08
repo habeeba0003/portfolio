@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syeda Umme Habeeba | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- PARTICLE CANVAS -->
+  <canvas id="particles"></canvas>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">SUH<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting reveal-up">Hello, I'm</p>
+      <h1 class="hero-name reveal-up delay-1">Syeda Umme<br><span class="accent">Habeeba</span></h1>
+      <p class="hero-role reveal-up delay-2">
+        <span class="typed" id="typed-text"></span><span class="cursor-blink">|</span>
+      </p>
+      <p class="hero-bio reveal-up delay-3">ACM Hackathon Winner · AI Engineer · Data Science/analyst · 3rd Year IT Student</p>
+      <div class="hero-cta reveal-up delay-4">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-socials reveal-up delay-5">
+        <a href="https://github.com/habeeba0003" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/syeda-umme-habeeba-716b4b358" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ummehabeeba0003@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring">
+        <div class="orbit-ring ring1"></div>
+        <div class="orbit-ring ring2"></div>
+        <div class="avatar">SUH</div>
+      </div>
+      <div class="badge b1"><i class="fas fa-trophy"></i> ACM Winner</div>
+      <div class="badge b2"><i class="fas fa-brain"></i> AI Engineer</div>
+      <div class="badge b3"><i class="fas fa-code"></i> Full-Stack</div>
+      <div class="badge b4"><i class="fas fa-chart-bar"></i> Data Science</div>
+      <div class="badge b5"><i class="fas fa-vial"></i> Software Testing</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title reveal-up">About <span class="accent">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p>I'm a 3rd-year Information Technology student at Stanley College of Engineering and Technology for Women, Hyderabad. I build AI-powered applications, full-stack web platforms, and data-driven solutions.</p>
+          <p>Winner of the <strong>ACM-W Inter-College Ideathon (AI/ML Track, 2026)</strong> and selected for the <strong>WE Hub Flint Program</strong> by the Government of Telangana. I also serve as Technical Head at ISTE, where I spearheaded a 5-day AI Prompt Engineering Workshop for 60+ students.</p>
+          <p>I'm passionate about building scalable, real-world applications — from AI mental health platforms to hackathon discovery tools.</p>
+        </div>
+        <div class="about-stats reveal-right">
+          <div class="stat-card"><span class="stat-num counter" data-target="5">0</span><span class="stat-label">Projects Built</span></div>
+          <div class="stat-card"><span class="stat-num counter" data-target="3">0</span><span class="stat-label">Internships</span></div>
+          <div class="stat-card"><span class="stat-num counter" data-target="10">0</span><span class="stat-label">Certifications</span></div>
+          <div class="stat-card"><span class="stat-num">1st</span><span class="stat-label">ACM Ideathon</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal-up">Technical <span class="accent">Skills</span></h2>
+      <div class="skills-grid">
+        <div class="skill-category reveal-up">
+          <h3><i class="fas fa-code"></i> Languages</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>JavaScript</span><span>SQL</span><span>C (DSA)</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-1">
+          <h3><i class="fas fa-brain"></i> AI / ML</h3>
+          <div class="skill-tags">
+            <span>scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>NLP</span><span>LSTM</span><span>Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-2">
+          <h3><i class="fas fa-globe"></i> Web & Mobile</h3>
+          <div class="skill-tags">
+            <span>React</span><span>Node.js</span><span>Express</span><span>REST APIs</span><span>WebRTC</span><span>Firebase</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-3">
+          <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
+          <div class="skill-tags">
+            <span>AWS</span><span>Google Cloud</span><span>Oracle Cloud</span><span>Git</span><span>ServiceNow</span><span>Power BI</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-4">
+          <h3><i class="fas fa-database"></i> Data & BI</h3>
+          <div class="skill-tags">
+            <span>Pandas</span><span>Matplotlib</span><span>Power BI</span><span>SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS — FLIP CARDS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal-up">Featured <span class="accent">Projects</span></h2>
+      <p class="flip-hint reveal-up"><i class="fas fa-hand-pointer"></i> Hover over a card to flip it</p>
+      <div class="projects-grid">
+
+        <!-- MindMate -->
+        <div class="flip-card reveal-up">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="card-icon mindmate-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>MindMate</h3>
+              <p class="card-tagline">AI Mental Health Platform</p>
+              <div class="card-badge">Featured</div>
+              <p class="flip-cue"><i class="fas fa-sync-alt"></i> Hover to explore</p>
+            </div>
+            <div class="flip-back">
+              <div class="back-tag">AI · Full-Stack · NLP</div>
+              <h3>MindMate</h3>
+              <p>AI-powered mental wellness platform with empathetic conversational therapy, mood detection, real-time crisis escalation to licensed psychologists via WebRTC video, and HIPAA-aligned data handling.</p>
+              <div class="project-stack">
+                <span>Python</span><span>React</span><span>Node.js</span><span>NLP</span><span>LLM APIs</span><span>WebRTC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HackMate -->
+        <div class="flip-card reveal-up delay-1">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="card-icon hackmate-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>HackMate</h3>
+              <p class="card-tagline">Hackathon Discovery Platform</p>
+              <div class="card-badge in-dev">In Development</div>
+              <p class="flip-cue"><i class="fas fa-sync-alt"></i> Hover to explore</p>
+            </div>
+            <div class="flip-back">
+              <div class="back-tag">Full-Stack · Real-Time</div>
+              <h3>HackMate</h3>
+              <p>Full-stack platform aggregating hackathon listings with intelligent cross-college team formation, skill-tagged profiles, and real-time WebSocket notifications for team invites and deadlines.</p>
+              <div class="project-stack">
+                <span>React</span><span>Node.js</span><span>MongoDB</span><span>WebSockets</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stock Predictor -->
+        <div class="flip-card reveal-up delay-2">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="card-icon stock-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Stock Predictor</h3>
+              <p class="card-tagline">ML Price Forecasting</p>
+              <div class="card-badge ml">ML · 91% Accuracy</div>
+              <p class="flip-cue"><i class="fas fa-sync-alt"></i> Hover to explore</p>
+            </div>
+            <div class="flip-back">
+              <div class="back-tag">ML · Data Science</div>
+              <h3>Stock Price Predictor</h3>
+              <p>End-to-end ML pipeline using Linear Regression and LSTM with 91% directional accuracy. Includes Matplotlib dashboards for predicted vs. actual price trajectory visualisation.</p>
+              <div class="project-stack">
+                <span>Python</span><span>yfinance</span><span>scikit-learn</span><span>LSTM</span><span>Matplotlib</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title reveal-up">Work <span class="accent">Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot pulse"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">Aug 2024 – Present <span class="live-badge">● Live</span></div>
+            <h3>Technical Head <span class="at">@ ISTE</span></h3>
+            <p>Spearheaded a 5-day AI Prompt Engineering Workshop for 60+ students covering LLM fundamentals, chain-of-thought prompting, and real-world use cases. Coordinated with industry professionals for guest sessions.</p>
+            <div class="project-stack"><span>Leadership</span><span>AI/ML</span><span>Event Management</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">Apr 2025 – May 2025</div>
+            <h3>AI Intern <span class="at">@ Edunet Foundation</span></h3>
+            <p>Built a Stock Price Predictor end-to-end — from data ingestion with yfinance to Linear Regression modeling, feature engineering, and Matplotlib visualisations. Researched LSTM & sentiment analysis integration as future improvements.</p>
+            <div class="project-stack"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Matplotlib</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">Apr 2025 – May 2025</div>
+            <h3>Artificial Intelligence Intern <span class="at">@ Coincent.ai</span></h3>
+            <p>Worked on AI-driven projects applying machine learning and deep learning concepts in real-world scenarios. Gained hands-on experience with AI model development, data preprocessing, and deployment workflows.</p>
+            <div class="project-stack"><span>Python</span><span>Machine Learning</span><span>Deep Learning</span><span>AI</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-left delay-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">Mar 2025 – Apr 2025</div>
+            <h3>System Administrator Intern <span class="at">@ ServiceNow</span></h3>
+            <p>Managed admin dashboards, configured role-based access, maintained the Knowledge Base, and performed user impersonation for ITSM troubleshooting aligned with best practices.</p>
+            <div class="project-stack"><span>ServiceNow</span><span>ITSM</span><span>Admin</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <h2 class="section-title reveal-up">Key <span class="accent">Achievements</span></h2>
+      <div class="achievements-grid">
+        <div class="achievement-card reveal-up"><i class="fas fa-trophy"></i><h3>ACM-W Ideathon Winner</h3><p>Inter-College AI/ML Track, 2026</p></div>
+        <div class="achievement-card reveal-up delay-1"><i class="fas fa-users"></i><h3>Workshop Organizer</h3><p>5-Day AI Prompt Engineering Workshop · 60+ attendees</p></div>
+        <div class="achievement-card reveal-up delay-2"><i class="fas fa-star"></i><h3>WE Hub Flint Program</h3><p>Selected Cohort · Govt. of Telangana, 2024</p></div>
+        <div class="achievement-card reveal-up delay-3"><i class="fas fa-certificate"></i><h3>10+ Certifications</h3><p>Microsoft Azure AI, PwC Power BI, Google Cloud GenAI, Deloitte, Infosys & more</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="container contact-container">
+      <h2 class="section-title reveal-up">Get In <span class="accent">Touch</span></h2>
+      <p class="contact-sub reveal-up">I'm open to internships, collaborations, and exciting projects. Let's connect!</p>
+      <div class="contact-cards">
+        <a href="mailto:syedaummehabeeba6@gmail.com" class="contact-card reveal-up"><i class="fas fa-envelope"></i><span>syedaummehabeeba6@gmail.com</span></a>
+        <a href="https://linkedin.com/in/syeda-umme-habeeba-716b4b358" target="_blank" class="contact-card reveal-up delay-1"><i class="fab fa-linkedin"></i><span>linkedin.com/in/syeda-umme-habeeba</span></a>
+        <a href="https://github.com/habeeba0003" target="_blank" class="contact-card reveal-up delay-2"><i class="fab fa-github"></i><span>github.com/habeeba0003</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Designed & Built by <span class="accent">Syeda Umme Habeeba</span> · 2025</p>
+    <div class="footer-links"><a href="#home">Back to top <i class="fas fa-arrow-up"></i></a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
