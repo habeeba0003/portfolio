@@ -172,7 +172,60 @@ const cObs=new IntersectionObserver(entries=>{
 },{threshold:0.5});
 counters.forEach(c=>cObs.observe(c));
 
-// ===== ACTIVE NAV =====
+// ===== ACHIEVEMENTS CAROUSEL =====
+const achCards = Array.from(document.querySelectorAll('.ach-card'));
+const achDotsEl = document.getElementById('achDots');
+let achActive = 0;
+let achAuto;
+
+// build dots
+achCards.forEach((_,i)=>{
+  const d = document.createElement('div');
+  d.className = 'ach-dot' + (i===0?' active':'');
+  d.addEventListener('click',()=>goTo(i));
+  achDotsEl.appendChild(d);
+});
+
+function getClass(i){
+  const total = achCards.length;
+  const diff = ((i - achActive) % total + total) % total;
+  const ndiff = ((achActive - i) % total + total) % total;
+  const rel = diff <= ndiff ? diff : -ndiff;
+  if(rel===0) return 'active';
+  if(rel===1) return 'next1';
+  if(rel===-1) return 'prev1';
+  if(rel===2) return 'next2';
+  if(rel===-2) return 'prev2';
+  return 'hidden';
+}
+
+function render(){
+  achCards.forEach((c,i)=>{
+    c.className = 'ach-card ' + getClass(i);
+  });
+  document.querySelectorAll('.ach-dot').forEach((d,i)=>{
+    d.classList.toggle('active', i===achActive);
+  });
+}
+
+function goTo(idx){
+  achActive = (idx + achCards.length) % achCards.length;
+  render();
+}
+
+// hover to focus
+achCards.forEach((c,i)=>{
+  c.addEventListener('mouseenter',()=>{ clearInterval(achAuto); goTo(i); });
+  c.addEventListener('mouseleave',()=>{ startAuto(); });
+});
+
+function startAuto(){
+  clearInterval(achAuto);
+  achAuto = setInterval(()=>goTo(achActive+1), 2500);
+}
+
+render();
+startAuto();
 const sections=document.querySelectorAll('section[id]');
 window.addEventListener('scroll',()=>{
   const sy=scrollY+100;
