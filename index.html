@@ -9,25 +9,114 @@
 </head>
 <body>
 
-  <!-- PARTICLE CANVAS -->
-  <canvas id="particles"></canvas>
+  <!-- GOLD FIREFLY CURSOR -->
+  <canvas id="fireflyCanvas"></canvas>
+  <div class="gold-cursor" id="goldCursor"></div>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursor-trail"></div>
+  <!-- CINEMATIC INTRO -->
+  <div class="intro-screen" id="introScreen">
+    <div class="intro-lines">
+      <p class="intro-line" id="introLine">Building Intelligence. Crafting Solutions. Shaping the Future.</p>
+      <div class="intro-underline"></div>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD ANIMATION OVERLAY -->
+  <div class="dl-overlay" id="dlOverlay">
+    <div class="dl-box">
+      <div class="dl-chart">
+        <div class="dl-bar" style="--h:40%;--d:0s"></div>
+        <div class="dl-bar" style="--h:70%;--d:.1s"></div>
+        <div class="dl-bar" style="--h:55%;--d:.2s"></div>
+        <div class="dl-bar" style="--h:90%;--d:.3s"></div>
+        <div class="dl-bar" style="--h:60%;--d:.4s"></div>
+        <div class="dl-bar" style="--h:80%;--d:.5s"></div>
+        <div class="dl-bar" style="--h:45%;--d:.15s"></div>
+        <div class="dl-bar" style="--h:75%;--d:.25s"></div>
+      </div>
+      <div class="dl-line-chart">
+        <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+          <polyline class="dl-polyline" points="0,50 25,35 50,45 75,20 100,30 125,10 150,25 175,5 200,15"/>
+        </svg>
+      </div>
+      <i class="fas fa-download dl-icon"></i>
+      <p class="dl-text">Downloading Resume...</p>
+      <div class="dl-progress"><div class="dl-progress-bar" id="dlBar"></div></div>
+    </div>
+  </div>
+
+  <!-- PARTICLES BG -->
+  <canvas id="particles"></canvas>
 
   <!-- NAV -->
   <nav class="navbar" id="navbar">
     <div class="nav-brand">SUH<span class="dot">.</span></div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#" class="nav-resume-btn" id="navResumeBtn"><i class="fas fa-file-alt"></i> View Resume</a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </nav>
+
+  <!-- RESUME MODAL -->
+  <div class="resume-modal" id="resumeModal">
+    <div class="resume-modal-box">
+      <div class="resume-modal-header">
+        <h3><i class="fas fa-file-alt"></i> Resume</h3>
+        <div class="resume-actions">
+          <button class="btn-download-resume" id="downloadResumeBtn"><i class="fas fa-download"></i> Download</button>
+          <button class="resume-close-btn" id="resumeCloseBtn"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <div class="resume-doc">
+          <div class="res-head">
+            <h1>Syeda Umme Habeeba</h1>
+            <p class="res-role">Software Engineer | AI | Data Science & Analytics | Full-Stack Developer</p>
+            <div class="res-contacts">
+              <span><i class="fas fa-envelope"></i> ummehabeeba0003@gmail.com</span>
+              <span><i class="fab fa-linkedin"></i> linkedin.com/in/syeda-umme-habeeba</span>
+              <span><i class="fab fa-github"></i> github.com/habeeba0003</span>
+              <span><i class="fas fa-map-marker-alt"></i> Hyderabad, India</span>
+            </div>
+          </div>
+          <div class="res-sec"><h2>Professional Summary</h2>
+            <p>ACM Hackathon-winner, 3rd-year IT student with experience in software development and AI-driven applications. Proficient in Python, Java and JavaScript. Passionate about building scalable applications, extracting insights from data, and solving real-world problems.</p>
+          </div>
+          <div class="res-sec"><h2>Internship Experience</h2>
+            <div class="res-entry"><div class="res-entry-top"><strong>AI Intern — Edunet Foundation</strong><span>Apr 2025 – May 2025</span></div><p>Built a Stock Price Predictor end-to-end using Python, pandas, scikit-learn and Matplotlib. Researched LSTM & sentiment analysis integration.</p></div>
+            <div class="res-entry"><div class="res-entry-top"><strong>AI Intern — Coincent.ai</strong><span>Apr 2025 – May 2025</span></div><p>Applied ML/DL to build AI-driven solutions; handled data preprocessing and contributed to deployment pipelines in a real-world AI product environment.</p></div>
+            <div class="res-entry"><div class="res-entry-top"><strong>System Administrator Intern — ServiceNow</strong><span>Mar 2025 – Apr 2025</span></div><p>Managed admin dashboards, configured role-based access, maintained the Knowledge Base and performed ITSM troubleshooting.</p></div>
+          </div>
+          <div class="res-sec"><h2>Technical Projects</h2>
+            <div class="res-entry"><strong>MindMate</strong> — AI mental wellness platform with LLM backend, mood detection, WebRTC video, HIPAA-aligned data handling. <em>Python · NLP · LLM APIs · React · Node.js · WebRTC</em></div>
+            <div class="res-entry"><strong>HackMate</strong> — Hackathon discovery & team-building platform with real-time WebSocket notifications. <em>React · Node.js · Express · MongoDB · WebSockets</em></div>
+            <div class="res-entry"><strong>Stock Price Predictor</strong> — ML pipeline with 91% directional accuracy using Linear Regression + LSTM. <em>Python · yfinance · scikit-learn · Matplotlib · LSTM</em></div>
+          </div>
+          <div class="res-sec"><h2>Leadership & Community</h2>
+            <div class="res-entry"><div class="res-entry-top"><strong>Technical Head — ISTE</strong><span>Aug 2024 – Present</span></div><p>Spearheaded a 5-day AI Prompt Engineering Workshop for 60+ students; coordinated industry guest sessions.</p></div>
+            <div class="res-entry"><strong>WE Hub Flint Program — Cohort 3</strong> — Selected among competitive cohort of women technologists; mentorship & innovation sprints on AI-driven product ideation.</div>
+          </div>
+          <div class="res-sec"><h2>Key Achievements</h2>
+            <p>• Winner — ACM-W Inter-College Ideathon (AI/ML Track), 2026<br>• Organizer — 5-Day AI Prompt Engineering Workshop (60+ attendees), 2025<br>• Selected Cohort — WE Hub Flint Program, Govt. of Telangana, 2024</p>
+          </div>
+          <div class="res-sec"><h2>Technical Skills</h2>
+            <p><strong>Languages:</strong> Python, JavaScript, C (DSA), SQL &nbsp;|&nbsp; <strong>AI/ML:</strong> scikit-learn, TensorFlow/Keras, NLP, LSTM, Prompt Engineering<br><strong>Cloud:</strong> AWS, Oracle Cloud, Google Cloud &nbsp;|&nbsp; <strong>Web:</strong> Node.js, Express, React, REST APIs, Firebase, WebRTC<br><strong>Data & BI:</strong> Power BI, Pandas, Matplotlib, SQL &nbsp;|&nbsp; <strong>Tools:</strong> Git, ServiceNow, Agile, OWASP</p>
+          </div>
+          <div class="res-sec"><h2>Certifications</h2>
+            <p>Microsoft Azure AI Fundamentals · PwC Power BI · Deloitte Data Analytics · Infosys Data Science · Google Cloud GenAI Studio · HPE Software Engineering · Tata Data Visualisation · Udemy Data Analytics · Scaler Networking · Coincent AI with Python</p>
+          </div>
+          <div class="res-sec"><h2>Education</h2>
+            <div class="res-entry"><div class="res-entry-top"><strong>B.E. Information Technology — Stanley College of Engineering, Hyderabad</strong><span>2023–2027</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
@@ -35,12 +124,13 @@
       <p class="hero-greeting reveal-up">Hello, I'm</p>
       <h1 class="hero-name reveal-up delay-1">Syeda Umme<br><span class="accent">Habeeba</span></h1>
       <p class="hero-role reveal-up delay-2">
-        <span class="typed" id="typed-text"></span><span class="cursor-blink">|</span>
+        <span id="typed-text"></span><span class="cursor-blink">|</span>
       </p>
-      <p class="hero-bio reveal-up delay-3">ACM Hackathon Winner · AI Engineer · Data Science/analyst · 3rd Year IT Student</p>
+      <p class="hero-bio reveal-up delay-3">ACM Hackathon Winner · AI Engineer · Data Science/Analytics · 3rd Year IT Student</p>
       <div class="hero-cta reveal-up delay-4">
         <a href="#projects" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <button class="btn btn-view-resume shimmer-btn" id="heroResumeBtn"><i class="fas fa-file-alt"></i> View Resume</button>
       </div>
       <div class="hero-socials reveal-up delay-5">
         <a href="https://github.com/habeeba0003" target="_blank"><i class="fab fa-github"></i></a>
@@ -82,42 +172,87 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- SKILLS — MARQUEE (resume-only skills) -->
   <section class="section section-alt" id="skills">
     <div class="container">
       <h2 class="section-title reveal-up">Technical <span class="accent">Skills</span></h2>
-      <div class="skills-grid">
-        <div class="skill-category reveal-up">
-          <h3><i class="fas fa-code"></i> Languages</h3>
-          <div class="skill-tags">
-            <span>Python</span><span>JavaScript</span><span>SQL</span><span>C (DSA)</span>
-          </div>
+    </div>
+    <div class="marquee-wrap">
+      <!-- Row 1: LTR -->
+      <div class="marquee-row"><div class="marquee-track ltr">
+        <div class="mq-set">
+          <span class="sk-pill"><i class="fab fa-python"></i>Python</span>
+          <span class="sk-pill"><i class="fab fa-js"></i>JavaScript</span>
+          <span class="sk-pill"><i class="fas fa-database"></i>SQL</span>
+          <span class="sk-pill"><i class="fas fa-code"></i>C (DSA)</span>
+          <span class="sk-pill"><i class="fab fa-react"></i>React</span>
+          <span class="sk-pill"><i class="fab fa-node-js"></i>Node.js</span>
+          <span class="sk-pill"><i class="fas fa-server"></i>Express</span>
+          <span class="sk-pill"><i class="fas fa-fire"></i>Firebase</span>
+          <span class="sk-pill"><i class="fas fa-mobile-alt"></i>Android SDK</span>
         </div>
-        <div class="skill-category reveal-up delay-1">
-          <h3><i class="fas fa-brain"></i> AI / ML</h3>
-          <div class="skill-tags">
-            <span>scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>NLP</span><span>LSTM</span><span>Prompt Engineering</span>
-          </div>
+        <div class="mq-set" aria-hidden="true">
+          <span class="sk-pill"><i class="fab fa-python"></i>Python</span>
+          <span class="sk-pill"><i class="fab fa-js"></i>JavaScript</span>
+          <span class="sk-pill"><i class="fas fa-database"></i>SQL</span>
+          <span class="sk-pill"><i class="fas fa-code"></i>C (DSA)</span>
+          <span class="sk-pill"><i class="fab fa-react"></i>React</span>
+          <span class="sk-pill"><i class="fab fa-node-js"></i>Node.js</span>
+          <span class="sk-pill"><i class="fas fa-server"></i>Express</span>
+          <span class="sk-pill"><i class="fas fa-fire"></i>Firebase</span>
+          <span class="sk-pill"><i class="fas fa-mobile-alt"></i>Android SDK</span>
         </div>
-        <div class="skill-category reveal-up delay-2">
-          <h3><i class="fas fa-globe"></i> Web & Mobile</h3>
-          <div class="skill-tags">
-            <span>React</span><span>Node.js</span><span>Express</span><span>REST APIs</span><span>WebRTC</span><span>Firebase</span>
-          </div>
+      </div></div>
+      <!-- Row 2: RTL -->
+      <div class="marquee-row"><div class="marquee-track rtl">
+        <div class="mq-set">
+          <span class="sk-pill"><i class="fas fa-brain"></i>scikit-learn</span>
+          <span class="sk-pill"><i class="fas fa-network-wired"></i>TensorFlow/Keras</span>
+          <span class="sk-pill"><i class="fas fa-robot"></i>NLP (TF-IDF, spaCy)</span>
+          <span class="sk-pill"><i class="fas fa-wave-square"></i>LSTM</span>
+          <span class="sk-pill"><i class="fas fa-comment-dots"></i>Prompt Engineering</span>
+          <span class="sk-pill"><i class="fab fa-aws"></i>AWS</span>
+          <span class="sk-pill"><i class="fas fa-cloud"></i>Oracle Cloud</span>
+          <span class="sk-pill"><i class="fas fa-cloud-upload-alt"></i>Google Cloud</span>
+          <span class="sk-pill"><i class="fas fa-satellite-dish"></i>REST APIs</span>
         </div>
-        <div class="skill-category reveal-up delay-3">
-          <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
-          <div class="skill-tags">
-            <span>AWS</span><span>Google Cloud</span><span>Oracle Cloud</span><span>Git</span><span>ServiceNow</span><span>Power BI</span>
-          </div>
+        <div class="mq-set" aria-hidden="true">
+          <span class="sk-pill"><i class="fas fa-brain"></i>scikit-learn</span>
+          <span class="sk-pill"><i class="fas fa-network-wired"></i>TensorFlow/Keras</span>
+          <span class="sk-pill"><i class="fas fa-robot"></i>NLP (TF-IDF, spaCy)</span>
+          <span class="sk-pill"><i class="fas fa-wave-square"></i>LSTM</span>
+          <span class="sk-pill"><i class="fas fa-comment-dots"></i>Prompt Engineering</span>
+          <span class="sk-pill"><i class="fab fa-aws"></i>AWS</span>
+          <span class="sk-pill"><i class="fas fa-cloud"></i>Oracle Cloud</span>
+          <span class="sk-pill"><i class="fas fa-cloud-upload-alt"></i>Google Cloud</span>
+          <span class="sk-pill"><i class="fas fa-satellite-dish"></i>REST APIs</span>
         </div>
-        <div class="skill-category reveal-up delay-4">
-          <h3><i class="fas fa-database"></i> Data & BI</h3>
-          <div class="skill-tags">
-            <span>Pandas</span><span>Matplotlib</span><span>Power BI</span><span>SQL</span>
-          </div>
+      </div></div>
+      <!-- Row 3: LTR slow -->
+      <div class="marquee-row"><div class="marquee-track ltr slow">
+        <div class="mq-set">
+          <span class="sk-pill"><i class="fas fa-chart-bar"></i>Power BI</span>
+          <span class="sk-pill"><i class="fas fa-table"></i>Pandas</span>
+          <span class="sk-pill"><i class="fas fa-chart-line"></i>Matplotlib</span>
+          <span class="sk-pill"><i class="fas fa-video"></i>WebRTC</span>
+          <span class="sk-pill"><i class="fab fa-git-alt"></i>Git</span>
+          <span class="sk-pill"><i class="fas fa-cogs"></i>ServiceNow (ITSM)</span>
+          <span class="sk-pill"><i class="fas fa-tasks"></i>Agile</span>
+          <span class="sk-pill"><i class="fas fa-shield-alt"></i>OWASP Security</span>
+          <span class="sk-pill"><i class="fas fa-coins"></i>yfinance</span>
         </div>
-      </div>
+        <div class="mq-set" aria-hidden="true">
+          <span class="sk-pill"><i class="fas fa-chart-bar"></i>Power BI</span>
+          <span class="sk-pill"><i class="fas fa-table"></i>Pandas</span>
+          <span class="sk-pill"><i class="fas fa-chart-line"></i>Matplotlib</span>
+          <span class="sk-pill"><i class="fas fa-video"></i>WebRTC</span>
+          <span class="sk-pill"><i class="fab fa-git-alt"></i>Git</span>
+          <span class="sk-pill"><i class="fas fa-cogs"></i>ServiceNow (ITSM)</span>
+          <span class="sk-pill"><i class="fas fa-tasks"></i>Agile</span>
+          <span class="sk-pill"><i class="fas fa-shield-alt"></i>OWASP Security</span>
+          <span class="sk-pill"><i class="fas fa-coins"></i>yfinance</span>
+        </div>
+      </div></div>
     </div>
   </section>
 
@@ -127,14 +262,10 @@
       <h2 class="section-title reveal-up">Featured <span class="accent">Projects</span></h2>
       <p class="flip-hint reveal-up"><i class="fas fa-hand-pointer"></i> Hover over a card to flip it</p>
       <div class="projects-grid">
-
-        <!-- MindMate -->
         <div class="flip-card reveal-up">
           <div class="flip-inner">
             <div class="flip-front">
-              <div class="card-icon mindmate-icon">
-                <i class="fas fa-brain"></i>
-              </div>
+              <div class="card-icon mindmate-icon"><i class="fas fa-brain"></i></div>
               <h3>MindMate</h3>
               <p class="card-tagline">AI Mental Health Platform</p>
               <div class="card-badge">Featured</div>
@@ -144,20 +275,14 @@
               <div class="back-tag">AI · Full-Stack · NLP</div>
               <h3>MindMate</h3>
               <p>AI-powered mental wellness platform with empathetic conversational therapy, mood detection, real-time crisis escalation to licensed psychologists via WebRTC video, and HIPAA-aligned data handling.</p>
-              <div class="project-stack">
-                <span>Python</span><span>React</span><span>Node.js</span><span>NLP</span><span>LLM APIs</span><span>WebRTC</span>
-              </div>
+              <div class="project-stack"><span>Python</span><span>React</span><span>Node.js</span><span>NLP</span><span>LLM APIs</span><span>WebRTC</span></div>
             </div>
           </div>
         </div>
-
-        <!-- HackMate -->
         <div class="flip-card reveal-up delay-1">
           <div class="flip-inner">
             <div class="flip-front">
-              <div class="card-icon hackmate-icon">
-                <i class="fas fa-users"></i>
-              </div>
+              <div class="card-icon hackmate-icon"><i class="fas fa-users"></i></div>
               <h3>HackMate</h3>
               <p class="card-tagline">Hackathon Discovery Platform</p>
               <div class="card-badge in-dev">In Development</div>
@@ -167,20 +292,14 @@
               <div class="back-tag">Full-Stack · Real-Time</div>
               <h3>HackMate</h3>
               <p>Full-stack platform aggregating hackathon listings with intelligent cross-college team formation, skill-tagged profiles, and real-time WebSocket notifications for team invites and deadlines.</p>
-              <div class="project-stack">
-                <span>React</span><span>Node.js</span><span>MongoDB</span><span>WebSockets</span>
-              </div>
+              <div class="project-stack"><span>React</span><span>Node.js</span><span>MongoDB</span><span>WebSockets</span></div>
             </div>
           </div>
         </div>
-
-        <!-- Stock Predictor -->
         <div class="flip-card reveal-up delay-2">
           <div class="flip-inner">
             <div class="flip-front">
-              <div class="card-icon stock-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
+              <div class="card-icon stock-icon"><i class="fas fa-chart-line"></i></div>
               <h3>Stock Predictor</h3>
               <p class="card-tagline">ML Price Forecasting</p>
               <div class="card-badge ml">ML · 91% Accuracy</div>
@@ -190,13 +309,10 @@
               <div class="back-tag">ML · Data Science</div>
               <h3>Stock Price Predictor</h3>
               <p>End-to-end ML pipeline using Linear Regression and LSTM with 91% directional accuracy. Includes Matplotlib dashboards for predicted vs. actual price trajectory visualisation.</p>
-              <div class="project-stack">
-                <span>Python</span><span>yfinance</span><span>scikit-learn</span><span>LSTM</span><span>Matplotlib</span>
-              </div>
+              <div class="project-stack"><span>Python</span><span>yfinance</span><span>scikit-learn</span><span>LSTM</span><span>Matplotlib</span></div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -206,7 +322,6 @@
     <div class="container">
       <h2 class="section-title reveal-up">Work <span class="accent">Experience</span></h2>
       <div class="timeline">
-
         <div class="timeline-item reveal-left">
           <div class="timeline-dot pulse"></div>
           <div class="timeline-content">
@@ -216,27 +331,24 @@
             <div class="project-stack"><span>Leadership</span><span>AI/ML</span><span>Event Management</span></div>
           </div>
         </div>
-
         <div class="timeline-item reveal-left delay-1">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-meta">Apr 2025 – May 2025</div>
             <h3>AI Intern <span class="at">@ Edunet Foundation</span></h3>
-            <p>Built a Stock Price Predictor end-to-end — from data ingestion with yfinance to Linear Regression modeling, feature engineering, and Matplotlib visualisations. Researched LSTM & sentiment analysis integration as future improvements.</p>
+            <p>Built a Stock Price Predictor end-to-end — from data ingestion with yfinance to Linear Regression modeling, feature engineering, and Matplotlib visualisations. Researched LSTM & sentiment analysis integration.</p>
             <div class="project-stack"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Matplotlib</span></div>
           </div>
         </div>
-
         <div class="timeline-item reveal-left delay-2">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-meta">Apr 2025 – May 2025</div>
             <h3>Artificial Intelligence Intern <span class="at">@ Coincent.ai</span></h3>
-            <p>Worked on AI-driven projects applying machine learning and deep learning concepts in real-world scenarios. Gained hands-on experience with AI model development, data preprocessing, and deployment workflows.</p>
+            <p>Applied ML and deep learning to build AI-driven solutions; handled data preprocessing workflows and contributed to deployment pipelines in a real-world AI product environment.</p>
             <div class="project-stack"><span>Python</span><span>Machine Learning</span><span>Deep Learning</span><span>AI</span></div>
           </div>
         </div>
-
         <div class="timeline-item reveal-left delay-3">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -246,7 +358,6 @@
             <div class="project-stack"><span>ServiceNow</span><span>ITSM</span><span>Admin</span></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -277,9 +388,8 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <p>Designed & Built by <span class="accent">Syeda Umme Habeeba</span> · 2025</p>
+    <p>Designed & Built with <span class="accent">♥</span> by <span class="accent">Syeda Umme Habeeba</span> · 2025</p>
     <div class="footer-links"><a href="#home">Back to top <i class="fas fa-arrow-up"></i></a></div>
   </footer>
 
