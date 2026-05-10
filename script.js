@@ -1,3 +1,42 @@
+// ===== RADIAL GLOW + PARALLAX =====
+const glow = document.createElement('div');
+glow.className = 'cursor-glow';
+document.body.appendChild(glow);
+
+const heroContent = document.querySelector('.hero-content');
+const heroVisual  = document.querySelector('.hero-visual');
+let glowX = window.innerWidth/2, glowY = window.innerHeight/2;
+let currentGlowX = glowX, currentGlowY = glowY;
+
+document.addEventListener('mousemove', e => {
+  glowX = e.clientX; glowY = e.clientY;
+
+  // parallax: content moves slightly toward cursor, visual moves opposite
+  if(heroContent && heroVisual){
+    const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx; // -1 to 1
+    const dy = (e.clientY - cy) / cy;
+    heroContent.style.transform = `translate(${dx * 8}px, ${dy * 5}px)`;
+    heroVisual.style.transform  = `translate(${dx * -12}px, ${dy * -8}px)`;
+  }
+});
+
+// smooth glow follow (lerp)
+function animGlow(){
+  currentGlowX += (glowX - currentGlowX) * 0.08;
+  currentGlowY += (glowY - currentGlowY) * 0.08;
+  glow.style.left = currentGlowX + 'px';
+  glow.style.top  = currentGlowY + 'px';
+  requestAnimationFrame(animGlow);
+}
+animGlow();
+
+// reset parallax when cursor leaves hero
+document.querySelector('.hero')?.addEventListener('mouseleave', () => {
+  if(heroContent) heroContent.style.transform = 'translate(0,0)';
+  if(heroVisual)  heroVisual.style.transform  = 'translate(0,0)';
+});
+
 // ===== CINEMATIC INTRO =====
 const intro = document.getElementById('introScreen');
 setTimeout(() => intro.classList.add('fade-out'), 3200);
