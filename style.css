@@ -200,7 +200,8 @@ strong{color:var(--light);}
 .marquee-row:hover .marquee-track{animation-play-state:paused;}
 @keyframes scrollLTR{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes scrollRTL{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.bot-icon{background:rgba(245,197,24,0.08);color:var(--gold);}
+.bot-icon{background:rgba(245,197,24,0.08);color:var(--gold) !important;}
+.bot-icon i{color:var(--gold) !important;}
 .card-gh-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--gold);font-size:0.78rem;border:1px solid rgba(245,197,24,0.3);border-radius:20px;padding:0.25rem 0.8rem;margin-top:0.5rem;transition:background 0.2s;}
 .card-gh-link:hover{background:rgba(245,197,24,0.1);}
 .sk-pill{display:inline-flex;align-items:center;gap:0.5rem;background:var(--card-bg);border:1px solid var(--border);border-radius:40px;padding:0.55rem 1.3rem;font-size:0.85rem;color:var(--light);white-space:nowrap;transition:border-color 0.3s,color 0.3s,box-shadow 0.3s;cursor:default;}
